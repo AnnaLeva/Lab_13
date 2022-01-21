@@ -30,12 +30,8 @@ namespace Проверка_13_Наследование
         public string Width { get; set; }
         public string Aheight { get; set; }
 
-        public Building()
-        {
-
-        }
-
         public Building(string adress, string length, string width, string aheight)
+
         {
             Adress = adress;
             Length = length;
@@ -53,13 +49,15 @@ namespace Проверка_13_Наследование
         public string Flor { get; set; }
 
         public BuildingApd(string adress, string length, string width, string aheight, string flor)
+            : base(adress,length,width,aheight)
         {
             Flor = flor;
         }
 
         public new void Print()
         {
-            Console.WriteLine("Flors number: {0}", this.Flor);
+            base.Print();
+            Console.WriteLine("Flors number: {0}",this.Flor);
         }
 
     }
